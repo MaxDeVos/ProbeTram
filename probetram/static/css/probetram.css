@@ -1,0 +1,197 @@
+/* Container grid */
+.probetram-tab-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8fr 1fr;
+    grid-template-areas:
+    "bed-points-container"
+    "button-container";
+}
+
+/* Settings grid */
+.bed-points-container {
+    outline: 1px solid #aaa;
+    padding: 10px;
+    grid-area: bed-points-container;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 25px 25px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "point0-cont . point1-cont"
+    ". point4-cont ."
+    "point2-cont . point3-cont"
+}
+
+.point0-cont {
+    grid-area: point0-cont;
+}
+
+.point1-cont {
+    grid-area: point1-cont;
+}
+
+.point2-cont {
+    grid-area: point2-cont;
+}
+
+.point3-cont {
+    grid-area: point3-cont;
+}
+
+.point4-cont {
+    grid-area: point4-cont;
+}
+
+/* Styles for inside of each "point box" on the "bed" (there are 5) */
+.point-box {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0 0;
+    grid-template-areas:
+    "coord"
+    "result"
+    "probe-point-button";
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.point-box-child {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.point-entry {
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+}
+
+.coord {
+    grid-area: coord;
+}
+
+.coord-text {
+    border: 1px solid #ddd;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.probe-point-button {
+    grid-area: probe-point-button;
+}
+
+.result {
+    grid-area: result;
+    border: 1px black solid;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.result-text {
+    font-size: 25px;
+    margin: 0;
+}
+
+/* Styles for buttons below the "bed" */
+.button-container {
+    grid-area: button-container;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". general-controls settings-button";
+    justify-content: center;
+    align-content: center;
+}
+
+.general-controls {
+    grid-area: general-controls;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.probe-all-btn {
+    width: 150px;
+}
+
+.clear-all-btn {
+    width: 75px;
+    margin-left: 10px;
+}
+
+.control-button {
+    height: 30px;
+    text-align: center;
+    margin: 10px;
+}
+
+.settings-button-container {
+    grid-area: settings-button;
+    display:grid;
+    align-content: center;
+    justify-content: right;
+}
+
+
+/* Settings Menu Specific (pointX-cont divs are reused) */
+.probetram-settings-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "point0-cont . point1-cont"
+    ". point4-cont ."
+    "point2-cont . point3-cont";
+}
+
+.point-box-settings {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top:30px;
+    gap: 0 0;
+    grid-template-areas:
+    " . . "
+    "x-cord y-cord"
+    " . . ";
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.x-cord {
+    grid-area: x-cord;
+}
+
+.y-cord {
+    grid-area: y-cord;
+}
+
+.invalid {
+    background-color: lightgray;
+}
+
+.latest {
+    background-color: lightgreen;
+}

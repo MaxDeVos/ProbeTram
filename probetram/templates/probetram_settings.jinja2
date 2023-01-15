@@ -1,0 +1,30 @@
+<h3>Bed Probe Settings</h3>
+
+<p>Define the points on the bed where the probe will be performed:</p>
+
+<div class="probetram-settings-container">
+    {% for i in range(0,5) %}
+        <div class="point-box-settings point{{ i }}-cont">
+            <div class="point-box-child x-cord">
+                <input type="text" class="input-mini point-entry"
+               data-bind="value: settings.plugins.probetram.X{{ i }}">
+            </div>
+            <div class="point-box-child y-cord">
+                <input type="text" class="input-mini point-entry"
+               data-bind="value: settings.plugins.probetram.Y{{ i }}">
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+{#<form class="form-horizontal">#}
+{#    <div class="control-group">#}
+{#        <label class="control-label">{{ _('URL') }}</label>#}
+{#        <div class="controls">#}
+{#            <input type="text" class="input-block-level" data-bind="value: settings.plugins.probetram.url">#}
+{#            <input type="text" class="input-block-level" data-bind="value: settings.plugins.probetram.gaming">#}
+{#        </div>#}
+{#    </div>#}
+{#</form>#}

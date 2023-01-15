@@ -1,0 +1,44 @@
+<script type="text/javascript" src="{{ url_for("static", filename="webassets/packed_client.js") }}"></script>
+<script src="{{ url_for("static", filename="js/lib/jquery/jquery.min.js") }}"></script>
+<script src="{{ url_for("static", filename="js/lib/lodash.min.js") }}"></script>
+
+<div class="probetram-tab-container">
+    <div class="bed-points-container">
+        {% for i in range(0,5) %}
+        <div class="point-box point{{ i }}-cont">
+            <div class="coord point-box-child">
+                <p class="coord-text">
+                    (
+                    <span data-bind="text: settings.settings.plugins.probetram.X{{ i }}"></span>
+                    ,
+                    <span data-bind="text: settings.settings.plugins.probetram.Y{{ i }}"></span>
+                    )
+                </p>
+            </div>
+            <div id="result-{{ i }}" class="result point-box-child">
+                <p class="result-text" id="z-value-p{{ i }}">?</p>
+            </div>
+            <div class="point-box-child probe-point-button">
+                <button class="btn control-button" id="probe-{{ i }}-btn">Probe</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="button-container">
+        <div class="general-controls">
+            <button class="btn control-button" id="probetram-home-btn">
+                <i class="fa fa-home"></i>
+            </button>
+            <button class="btn control-button probe-all-btn" id="probe-all-btn" data-bind="click: probeAll">Probe All</button>
+            <button class="btn btn-danger clear-all-btn" id="probe-all-btn" data-bind="click: clearAll">Clear</button>
+        </div>
+        <div class="settings-button-container">
+            <button class="btn" id="probetram-settings-button">
+                <i class="fa fa-gear"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
